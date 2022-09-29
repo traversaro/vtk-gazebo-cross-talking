@@ -19,8 +19,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        sudo mkdir -p /etc/apt/sources.list.d
-        sudo echo deb http://packages.osrfoundation.org/gazebo/$lsb_dist\-stable $dist_version main > /etc/apt/sources.list.d/gazebo-stable.list
+        sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
         sudo apt-get update
         sudo apt install -y libpcl-dev libgazebo-dev
