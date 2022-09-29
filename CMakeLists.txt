@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
 project(vtk-gazebo-cross-talking)
 
+find_package(Gazebo REQUIRED)
 find_package(VTK REQUIRED)
 message (STATUS "VTK_VERSION: ${VTK_VERSION}")
 if (VTK_VERSION VERSION_LESS "8.90.0")
   include(${VTK_USE_FILE})
 endif()
-find_package(Gazebo REQUIRED)
 
 add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
