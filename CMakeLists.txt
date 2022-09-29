@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.16)
 project(vtk-gazebo-cross-talking)
 
 find_package(VTK REQUIRED)
